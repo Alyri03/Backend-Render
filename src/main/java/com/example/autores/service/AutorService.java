@@ -32,7 +32,7 @@ public class AutorService {
       if (imagen != null && !imagen.isEmpty()) {
         String fileName = UUID.randomUUID() + "_" + imagen.getOriginalFilename();
         Path path = Paths.get(IMAGE_DIR + fileName);
-        Files.createDirectories(path.getParent()); // crea carpeta si no existe
+        Files.createDirectories(path.getParent()); 
         Files.copy(imagen.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
         a.setImagenUrl("/images/" + fileName);
       }
