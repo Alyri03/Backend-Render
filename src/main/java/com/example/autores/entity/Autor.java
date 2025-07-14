@@ -1,5 +1,6 @@
 package com.example.autores.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +11,7 @@ public class Autor {
 
   private String nombre;
   private String biografia;
+  @Nullable
   private String imagenUrl;
 
   // Getters y setters
