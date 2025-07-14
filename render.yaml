@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: backend-render
+    runtime: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: SPRING_APPLICATION_NAME
+      - key: SPRING_DATASOURCE_URL
+      - key: SPRING_DATASOURCE_USERNAME
+      - key: SPRING_DATASOURCE_PASSWORD
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+      - key: SPRING_JPA_SHOW_SQL
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+      - key: SPRING_SERVLET_MULTIPART_ENABLED
