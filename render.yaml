@@ -2,14 +2,22 @@ services:
   - type: web
     name: backend-render
     runtime: java
-    buildCommand: "./mvnw clean install"
-    startCommand: "java -jar target/*.jar"
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/autores-0.0.1.jar
     envVars:
       - key: SPRING_APPLICATION_NAME
+        value: autoresdb
       - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://mainline.proxy.rlwy.net:43623/autoresdb
       - key: SPRING_DATASOURCE_USERNAME
+        value: root
       - key: SPRING_DATASOURCE_PASSWORD
+        value: oVjLuRPDQPRdZEOMXckKEsgSqARMHDME
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
       - key: SPRING_JPA_SHOW_SQL
+        value: true
       - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+        value: org.hibernate.dialect.MySQLDialect
       - key: SPRING_SERVLET_MULTIPART_ENABLED
+        value: true
